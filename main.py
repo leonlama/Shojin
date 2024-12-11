@@ -178,8 +178,7 @@ class Game:
 
         font = pygame.font.Font(None, 36)
         if self.board.is_checkmate():
-            text = f"Checkmate! {
-                'White' if self.board.turn == chess.BLACK else 'Black'} wins!"
+            text = "Checkmate! " + ("Black" if self.board.turn else "White") + " wins!"
         elif self.board.is_stalemate():
             text = "Draw by Stalemate!"
         else:
@@ -202,8 +201,7 @@ class Game:
         screen.fill((200, 200, 200))
         font = pygame.font.Font(None, 36)
         if self.board.is_checkmate():
-            text = f"Checkmate! {
-                'White' if self.board.turn == chess.BLACK else 'Black'} wins!"
+            text = "Checkmate! " + ("Black" if self.board.turn else "White") + " wins!"
         elif self.board.is_stalemate():
             text = "Draw by Stalemate!"
         else:
@@ -247,7 +245,7 @@ def main():
     pygame.display.set_caption("Chess Game with Stockfish")
 
     # Replace with your engine path
-    engine_path = "D:/project_learn/Python/stockfish-windows-x86-64-avx2.exe"
+    engine_path = "C:/Users/leonl/Shojin/AdaptedChess/python_chess_stockfish/engine/stockfish-windows-x86-64-avx2.exe"
     game = Game(engine_path)
 
     running = True
